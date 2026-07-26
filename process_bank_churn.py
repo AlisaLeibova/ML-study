@@ -35,15 +35,14 @@ def preprocess_data(
         scale_numeric,
     )
 
-    return (
-        train_X,
-        train_y,
-        val_X,
-        val_y,
-        input_cols,
-        scaler,
-        encoder,
-    )
+    return {
+    "train_inputs": train_X,
+    "train_targets": train_y,
+    "val_inputs": val_X,
+    "val_targets": val_y,
+    "input_cols": input_cols,
+    "scaler": scaler,
+    "encoder": encoder }
 
 
 def split_dataset(df: pd.DataFrame):
